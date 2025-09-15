@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Generate Snake
         uses: Platane/snk@v3
         with:
@@ -18,11 +19,21 @@ jobs:
           outputs: |
             output/github-contribution-grid-snake.svg
             output/github-contribution-grid-snake-dark.svg
+
+      - name: Create and Push Orphan Branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan output
+          git commit -m "Initial commit for output branch"
+          git push -u origin output --force-with-lease
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Push to Repository
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
           build_dir: .
-          force_orphan: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
