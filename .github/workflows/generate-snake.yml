@@ -19,7 +19,7 @@ jobs:
             output/github-contribution-grid-snake.svg
             output/github-contribution-grid-snake-dark.svg
       - name: Push to Repository
-        uses: crazy-max/ghaction-github-pages@v2.5.0
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
           build_dir: .
