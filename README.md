@@ -7,9 +7,7 @@
 <br/>
 
   - 🔭 I'm currently a graduate student at the School of Computer Science and Engineering, **Kyungpook National University.**
-  - 🌱 I'm currently learning **Vue.js and modern web frameworks.**
-  - 👯 I'm looking to collaborate on **open-source projects in reverse engineering or data analysis.**
-  - 💬 Ask me about **C++, Python, React, and server-side development.**
+  - 🌱 I'm currently learning **SLM(Small Langugage Model) and SW Testing.**
   - 📫 How to reach me: **[99jik@99jik.com](mailto:99jik@99jik.com)**
   - 👶 **I was born on May 20, 1999, at 4 PM.**
 <br/>
@@ -74,7 +72,7 @@
 ### 🐍 My Contribution Graph
 
 <p align="center">
-  <img src="https://github.com/99JIK/blob/output/github-contribution-grid-snake.svg" alt="snake" />
+  <img src="https://raw.githubusercontent.com/99JIK/99JIK/output/github-contribution-grid-snake.svg" alt="snake" />
 </p>
 *Note: The contribution snake graph requires a separate GitHub Action to be set up in your `99JIK/99JIK` repository to generate the animation.*
 
