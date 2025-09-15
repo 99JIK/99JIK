@@ -1,7 +1,5 @@
 ### Hi there 👋, I'm 99JIK
-<p align="center">
-  <img src="https://mbti-type.vercel.app/api?user=ENTJ" alt="My MBTI Type" />
-</p>
+
 <p align="center">
   <em>A passionate developer and master's student from South Korea 🇰🇷</em>
 </p>
@@ -15,6 +13,13 @@
   - 📫 How to reach me: **[99jik@99jik.com](mailto:99jik@99jik.com)**
   - 👶 **I was born on May 20, 1999, at 4 PM.**
 <br/>
+
+### My MBTI
+
+<p align="left">
+  <strong><img src="https://img.shields.io/badge/MBTI-ENTJ-orange?style=for-the-badge&logo=firebase&logoColor=white" alt="MBTI" /> The Commander</strong><br/>
+  A decisive and strategic leader who loves a good challenge and thrives on creating and implementing long-term plans.
+</p>
 
 ### 🛠️ My Tech Stack
 
