@@ -1,5 +1,7 @@
 ### Hi there 👋, I'm 99JIK
-
+<p align="center">
+  <img src="https://mbti-type.vercel.app/api?user=ENTJ" alt="My MBTI Type" />
+</p>
 <p align="center">
   <em>A passionate developer and master's student from South Korea 🇰🇷</em>
 </p>
@@ -11,8 +13,7 @@
   - 👯 I'm looking to collaborate on **open-source projects in reverse engineering or data analysis.**
   - 💬 Ask me about **C++, Python, React, and server-side development.**
   - 📫 How to reach me: **[99jik@99jik.com](mailto:99jik@99jik.com)**
-  - ⚡ Fun fact: **I was born on May 20, 1999, at 4 PM.**
-
+  - 👶 **I was born on May 20, 1999, at 4 PM.**
 <br/>
 
 ### 🛠️ My Tech Stack
