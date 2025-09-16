@@ -80,4 +80,14 @@
 
 ### 📫 Connect with me:
 
-## <p align="left">   <a href="https://99jik.com" target="_blank">     <img src="https://img.shields.io/badge/Blog-434343?style=for-the-badge&logo=blogger&logoColor=white" alt="blog" />   </a>   <a href="[https://www.linkedin.com/in/your-linkedin-id](https://www.linkedin.com/in/your-linkedin-id)" target="_blank">     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" />   </a>   <a href="mailto:99jik@99jik.com">     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="gmail" />   </a> </p>
+<p align="left">
+  <a href="https://99jik.com" target="_blank">
+    <img src="https://img.shields.io/badge/Blog-434343?style=for-the-badge&logo=blogger&logoColor=white" alt="blog" />
+  </a>
+  <a href="[https://www.linkedin.com/in/99JIK](https://www.linkedin.com/in/your-linkedin-id)" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" />
+  </a>
+  <a href="mailto:99jik@99jik.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="gmail" />
+  </a>
+</p>
