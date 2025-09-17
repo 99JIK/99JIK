@@ -5,12 +5,13 @@
 </p>
 
 <br/>
-
   - 🔭 I'm currently a graduate student at the School of Computer Science and Engineering, **Kyungpook National University.**
   - 🌱 I'm currently learning **SLM(Small Langugage Model) and SW Testing.**
   - 📫 How to reach me: **[99jik@99jik.com](mailto:99jik@99jik.com)**
   - 👶 **I was born on May 20, 1999, at 4 PM.**
 <br/>
+### BOJ Solved.ac
+[![Solved.ac](http://mazassumnida.wtf/api/v2/generate_badge?boj=99jik)](https://solved.ac/99jik)
 
 ### My MBTI
 
