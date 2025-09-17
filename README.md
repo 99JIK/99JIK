@@ -11,7 +11,8 @@
   - 👶 **I was born on May 20, 1999, at 4 PM.**
 <br/>
 ### BOJ Solved.ac
-[![Solved.ac](http://mazassumnida.wtf/api/v2/generate_badge?boj=99jik)](https://solved.ac/99jik)
+
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=99JIK)](https://solved.ac/99JIK/)
 
 ### My MBTI
 
