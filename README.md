@@ -10,7 +10,8 @@
   - 📫 How to reach me: **[99jik@99jik.com](mailto:99jik@99jik.com)**
   - 👶 **I was born on May 20, 1999, at 4 PM.**
 <br/>
-### BOJ Solved.ac
+
+### BOJ Solved.ac Profile
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=99JIK)](https://solved.ac/99JIK/)
 
