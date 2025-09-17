@@ -5,12 +5,12 @@
 </p>
 
 <br/>
-  - 🔭 I'm currently a graduate student at the School of Computer Science and Engineering, **Kyungpook National University.**
-
-  - 🌱 I'm currently learning **SLM(Small Langugage Model) and SW Testing.**
-  
+  - 🔭 I'm currently a graduate student at the School of Computer Science and Engineering, **Kyungpook National University**.
+<br/>
+  - 🌱 I'm currently learning **SLM(Small Langugage Model) and SW Testing**.
+<br/>
   - 📫 How to reach me: **[99jik@99jik.com](mailto:99jik@99jik.com)**
-  
+<br/>
   - 👶 I was born on May 20, 1999, at 4 PM.
 <br/>
 
