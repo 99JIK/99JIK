@@ -80,7 +80,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/99JIK/99JIK/output/output/github-contribution-grid-snake.svg" alt="snake" />
 </p>
-*Note: The contribution snake graph requires a separate GitHub Action to be set up in your `99JIK/99JIK` repository to generate the animation.*
 
 <br/>
 
