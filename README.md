@@ -2,13 +2,14 @@
 
 <p align="center">
   Graduate Researcher · Kyungpook National University<br/>
-  Software Testing & Small Language Models
+  Software Testing &amp; Small Language Models
 </p>
 
 <p align="center">
   <a href="https://99jik.com"><img src="https://img.shields.io/badge/Blog-434343?style=flat-square&logo=blogger&logoColor=white" /></a>
   <a href="mailto:99jik@99jik.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" /></a>
   <img src="https://img.shields.io/badge/MBTI-ENTJ-orange?style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=99JIK&style=flat-square&color=blueviolet" alt="profile views" />
 </p>
 
 ---
@@ -51,13 +52,21 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=99JIK&show_icons=true&theme=radical&hide_border=true&count_private=true" height="160" />
+  <img src="https://streak-stats.demolab.com?user=99JIK&theme=radical&hide_border=true" height="160" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=99JIK&layout=compact&theme=radical&hide_border=true&count_private=true" height="160" />
 </p>
 
 ---
 
-## 🏆 BOJ
+## 🏆 Trophy
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=99JIK&theme=radical&no-frame=true&column=7&margin-w=4" />
+</p>
+
+---
+
+## 🏅 BOJ
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=99JIK)](https://solved.ac/99JIK/)
 
