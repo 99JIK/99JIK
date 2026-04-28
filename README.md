@@ -2,11 +2,11 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=180&section=header&text=JIK&fontSize=70&fontColor=ffffff&fontAlignY=38&desc=Graduate%20Researcher%20at%20Kyungpook%20National%20University&descAlignY=62&descSize=15&animation=fadeIn" />
 
-**Software Testing  ·  Small Language Models  ·  Software In The Loop(SITL)**
+**Software Testing  ·  Small Language Models  ·  Program Analysis**
 
 <br/>
 
-<a href="https://99jik.com">
+<a href="https://til.99jik.com">
   <img src="https://img.shields.io/badge/Blog-1a1a2e?style=for-the-badge&logo=hashnode&logoColor=white" />
 </a>
 <a href="mailto:99jik@99jik.com">
@@ -105,7 +105,7 @@ status:      Graduate Researcher
 <!-- BLOG-POST-LIST:END -->
 
 <div align="right">
-  <a href="https://99jik.com">→ View all posts</a>
+  <a href="https://til.99jik.com">→ View all posts</a>
 </div>
 
 <br/>
