@@ -1,6 +1,6 @@
-# JIK
+# Jeongin Kim
 
-Graduate Researcher, [Kyungpook National University](https://en.knu.ac.kr/)
+Graduate Researcher, [Kyungpook National University](https://knu.ac.kr/)
 
 > Working on **software testing** and **small language models**.
 > Interested in mutation testing, test automation, and program analysis.
