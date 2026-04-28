@@ -1,8 +1,8 @@
 # Jeongin Kim
 
-Graduate Researcher, [Kyungpook National University](https://knu.ac.kr/)
+M.S. Student, [Software Testing Lab](https://selab.knu.ac.kr), [Kyungpook National University](https://en.knu.ac.kr/)
 
-> Working on **software testing** and **small language models**.
+> Working on **software testing** and **language models**.
 > Interested in mutation testing, test automation, and program analysis.
 
 [til.99jik.com](https://til.99jik.com) · [99jik@99jik.com](mailto:99jik@99jik.com) · KST (UTC+9)
@@ -12,9 +12,9 @@ Graduate Researcher, [Kyungpook National University](https://knu.ac.kr/)
 ### Research
 
 ```
-focus       Software Testing · Small Language Models · Program Analysis
+focus       Software Testing · Language Models · Program Analysis
 methods     Mutation Testing · Test Automation · Static Analysis
-affiliation Kyungpook National University
+affiliation Software Testing Lab, Kyungpook National University
 ```
 
 ---
