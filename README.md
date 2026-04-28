@@ -61,6 +61,7 @@ DevOps      Docker  ·  Git
 ### Latest from [TIL](https://til.99jik.com)
 
 <!-- BLOG-POST-LIST:START -->
+- [TIL 사이트 개편 — 세 축 다시 쓰기](https://til.99jik.com/blog/260423)
 <!-- BLOG-POST-LIST:END -->
 
 ---
