@@ -63,7 +63,8 @@ DevOps      Docker  ·  Git
 <!-- BLOG-POST-LIST:START -->
 - [Checklist](https://til.99jik.com/blog/260601)
 - [260522](https://til.99jik.com/blog/260522)
-- [논문 아이디어 고민](https://til.99jik.com/blog/260521)
+- [논문 아이디어 고민&lpar;기각&rpar;](https://til.99jik.com/blog/260521)
+- [논문 아이디어 고민](https://til.99jik.com/blog/260613)
 - [TIL 사이트 개편 — 세 축 다시 쓰기](https://til.99jik.com/blog/260423)
 <!-- BLOG-POST-LIST:END -->
 
