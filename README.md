@@ -61,11 +61,11 @@ DevOps      Docker  ·  Git
 ### Latest from [TIL](https://til.99jik.com)
 
 <!-- BLOG-POST-LIST:START -->
+- [260623](https://til.99jik.com/blog/260623)
+- [260630](https://til.99jik.com/blog/260630)
+- [260731](https://til.99jik.com/blog/260731)
 - [CARLA Environment Evaluation](https://til.99jik.com/blog/260721)
 - [발표 진행 문서](https://til.99jik.com/blog/260727)
-- [260615](https://til.99jik.com/blog/260615)
-- [블록체인특론 기말고사 대체 과제](https://til.99jik.com/blog/260622)
-- [Checklist](https://til.99jik.com/blog/260601)
 <!-- BLOG-POST-LIST:END -->
 
 ---
