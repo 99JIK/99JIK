@@ -1,0 +1,30 @@
+name: build cv
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: compile
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            cv-en.tex
+            cv-ko.tex
+          latexmk_use_xelatex: true
+          # 컨테이너(Alpine) 안에 한글 폰트 설치. 러너 호스트에 깔면 컨테이너엔 안 보임.
+          extra_system_packages: "font-noto-cjk"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: |
+            cv-en.pdf
+            cv-ko.pdf

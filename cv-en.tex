@@ -1,0 +1,206 @@
+\documentclass[small]{cv}
+
+% 국문판(32mm)과 맞춤. 기본 24mm로는 2025.03--present가 두 줄로 접혀
+% 항목마다 한 줄씩 낭비되고, 국문판과 좌측 배치도 달라 보임.
+\setdatewidth{30mm}
+
+% [확인] 아래 표시된 항목은 본인 공개 페이지(GitHub 프로필, til.99jik.com, selab.knu.ac.kr)에서
+% 끌어온 추론. 사실 확인 후 주석 지울 것.
+
+\cvname{Jeongin Kim}
+% 자율주행은 뺐음. 읽은 논문에서 추론한 것이고 실적이 없음.
+% 실제 실적은 SW 테스팅(KCC 25/26), SIL(ABB), 산업 공정 데이터 ML(UCWIT 25).
+\cvtagline{M.S. student in software testing. LLM-driven generation of test environments,
+and predictive modeling on industrial process data.}
+% 전화번호는 뺐음. 저장소가 public이라 push하면 그대로 노출됨.
+% 제출할 때 필요하면 그때 한 줄 넣고 빌드할 것.
+% 링크는 둘만. GitHub은 프로젝트 코드 검증 경로라 필수, 개인 사이트는 상위 도메인 하나로 충분.
+% 거주지도 뺐음. 학력과 경력 항목마다 Daegu, Korea가 이미 붙어 있어 중복이고,
+% 학술 CV에서 거주지는 관례적으로 안 씀.
+\cvcontact{%
+  \cvmail{99jik@99jik.com}\cvsep
+  \cvlink{https://99jik.com}{99jik.com}\cvsep
+  \cvlink{https://github.com/99JIK}{github.com/99JIK}%
+}
+
+\begin{document}
+\makecvheader
+
+% ============================================================ Education
+\section{Education}
+% [확인] 지도교수/연구실은 GitHub bio + selab.knu.ac.kr에서 추론
+\cventry{2025.03--present}{M.S. Student, Computer Science and Engineering}
+  {Kyungpook National University}{Daegu, Korea}
+  {Advisor: Prof. Woojin Lee, Software Testing Lab (STLAB). Thesis topic not yet fixed.}
+
+% 성적증명서 기준. 생년월일, 학번, 야간 여부는 CV에 안 넣음.
+% 학점은 지역 옆 작은 muted 슬롯으로. 두 학위 모두 표기해 비대칭을 없앰.
+% 하나만 적고 하나를 비우면 심사자가 왜 하나만 없는지 알아챔. 숨기는 게 더 불리함.
+% (Advanced Major Course)는 소속 줄로 내렸음. 제목에 두면 길어져서 오른쪽 GPA 표기와
+% 충돌해 "GPA"만 첫 줄에 남고 나머지가 다음 줄로 흘러 소속 줄을 덮었음.
+\cventry{2023.03--2024.02}{B.Eng., Computer Information Engineering}
+  {Yeungjin University \cvnote{(Advanced Major Course)}}
+  {GPA 3.50/4.50\cvsep Daegu, Korea}{}
+
+% 계열은 소속 줄로 내렸음. 제목에 두면 길어져서 오른쪽 표기와 충돌해 줄이 깨짐.
+\cventry{2018.03--2023.02}{Associate Degree in Engineering, Web Database}
+  {Computer Information Division, Yeungjin University}{GPA 3.05/4.50\cvsep Daegu, Korea}{}
+
+% 5년 재학의 이유가 여기서 바로 설명돼야 함. 안 밝히면 심사자가 먼저 묻는다.
+% 날짜는 본인 기억 기준. 병적증명서(정부24)로 확인 필요.
+\cvline{2018.10--2020.06}{Republic of Korea Army, mandatory military service (completed)}
+
+% ============================================================ Research Interests
+\section{Research Interests}
+% 논문 세 편과 ABB 과제에서 실제로 다룬 것만. 자율주행과 퍼징은 실적이 없어 뺐음.
+Software testing, LLM-based test generation, SIL verification environments,
+predictive modeling on industrial process data
+
+% ============================================================ Publications
+\section{Publications \cvsectionnote{\corr corresponding author, own name in bold}}
+
+% 최신순으로 위에서 아래로. 번호는 1부터 올라감. 서지사항은 DBpia 등재 기준.
+% DBpia 목록에 교신저자가 안 뜨므로 이우진은 따로 붙였음.
+% 영문 표기는 KCC 스타일로 고정: Jeongin Kim, Woojin Lee (붙여 쓰고 두 번째 음절 소문자).
+% UCWIT 원문은 Jeong In Kim / Woo Jin Lee로 실렸으나 CV에서는 KCC 쪽으로 맞췄음.
+% 표기가 갈리면 Scholar나 DBpia에서 같은 저자로 안 묶임. 앞으로 투고할 때도 이걸로 통일할 것.
+\subsection*{Domestic Conference Papers \cvsectionnote{all in Korean}}
+\begin{publications}
+  \item \me{Jeongin Kim}, Deokyeop Kim, Hyeryung Suh, and Woojin Lee\corr.
+        Automatic Generation of Test Environment Behaviors Using LLM for
+        Embedded Software Testing.
+        \venue{Proc. Korea Computer Congress (KCC)}, pp. 582--584, June 2026.
+        \cvnote{Code: \cvlink{https://github.com/99JIK/KCC2026}{github.com/99JIK/KCC2026}}
+
+  % 영문 제목은 논문 원문에 실린 공식 제목.
+  \item \me{Jeongin Kim} and Woojin Lee\corr.
+        A Study on the Utilization of Sampling Time-point Data for Performance
+        Enhancement of the Biodegradable Fiber Spinning Process.
+        \venue{Symposium on Ubiquitous Computing and Web Information Technology (UCWIT)},
+        KIISE Yeongnam Branch, November 2025.
+
+  % DBpia 원문에 공식 영문 제목 없음. 아래는 내가 옮긴 것.
+  \item \me{Jeongin Kim} and Woojin Lee\corr.
+        The Ability of Generative AI to Understand and Utilize Test Cases.
+        \venue{Proc. Korea Computer Congress (KCC)}, pp. 397--399, July 2025.
+\end{publications}
+
+% ============================================================ Patents
+% 가출원 상태를 반드시 명시할 것. 정식 출원 전이고 심사도 안 들어갔음.
+% 기여도 수치(30/20/50)는 안 적음. 관례상 발명자 순서만 씀.
+\section{Patents}
+% 발명자 순서는 출원서 기준으로 본인이 확인해 준 것(김정인 먼저).
+% 특허사무소 송부 문서의 대표 발명자란은 이우진이 먼저인데, 그 필드는 연락 책임자를
+% 앞세우는 사무소 관행이라 출원서 순서와 다름. 문서 순서로 적었다가 되돌렸음.
+% 정식 출원번호 나오면 추가할 것.
+\begin{publications}
+  \item \me{Jeongin Kim}, Deokyeop Kim, and Woojin Lee.
+        A Method for Selecting Robust Optimal Process Parameter Combinations.
+        \cvnote{Provisional filed, full application in progress (July 2026).
+        Applicant: KNU Industry-Academic Cooperation Foundation. MOTIE/KIAT P0022335.}
+\end{publications}
+
+% ============================================================ Experience
+\section{Experience}
+% 석사 입학은 2025.03이지만 연구실 합류는 2024.12. 사실대로 적으면 공백도 6개월로 줄어듦.
+\cventry{2024.12--present}{Graduate Researcher}
+  {Software Testing Lab, Kyungpook National University}{Daegu, Korea}
+  {\begin{cvitems}
+     \item LLM-driven generation of environment object behaviors for SIL testing. A
+           three-stage decomposition-induction-synthesis prompt pipeline more than doubled
+           coverage over zero-shot and few-shot baselines across 11 objects in three
+           domains (elevator, drone, smart factory), consistent on GPT-4 and
+           Llama-3 70B (KCC 2026)
+     \item Sampling time-point introduced as a latent variable for temporal batch effects
+           in tensile-strength prediction for biodegradable fiber spinning. With GBR,
+           $R^2$ rose from 0.724 to 0.811, RMSE fell 17.2\%, and accuracy within the
+           industry tolerance rose from 87.1\% to 92.4\%.
+           MOTIE/KIAT project P0022335 (UCWIT 2025)
+     \item Methodology for building software-in-the-loop verification environments
+           at lower cost (2026, ongoing)
+   \end{cvitems}}
+
+% [확인] 제품명 Ark for CDC는 회사 제품 페이지(iarkdata.com)에서 확인. 담당 제품이 맞는지 확인 필요.
+% DBMS 목록은 본인이 직접 분석한 것만. 제품이 지원하는 전체 목록을 옮기면 안 됨.
+\cventry{2022.09--2024.06}{Researcher \cvnote{(reverse engineering)}}
+  {Arkdata}{Daegu, Korea}
+  {\begin{cvitems}
+     \item Reverse-engineered transaction log formats across heterogeneous DBMSs
+           (Oracle, PostgreSQL, MariaDB/MySQL, Tibero) to support development of a
+           Change Data Capture (CDC) solution
+     \item Designed and built a Kafka-based real-time pipeline across heterogeneous
+           databases
+     \item Implementation, analysis, and testing on a three-person research team
+   \end{cvitems}}
+
+% ============================================================ Teaching
+% 6개 학기 7건. 프로그래밍 기초를 네 번 맡은 게 재위촉 신호라 굳이 설명 안 해도 읽힘.
+\section{Teaching}
+\cventry{2025.03--present}{Teaching Assistant}
+  {School of Computer Science and Engineering, Kyungpook National University}{Daegu, Korea}
+  {\begin{cvitems}
+     \item Introduction to Programming: Spring 2025, Summer 2025, Winter 2025--26,
+           Summer 2026 (four terms)
+     \item System Programming and Creative Convergence Design: Fall 2025
+     \item Java Programming: Spring 2026
+   \end{cvitems}}
+
+% ============================================================ Projects
+\section{Projects}
+% ABB는 기업이 아니라 경북대 ICT-ABB 융합전공. A(AI)-B(BigData)-B(Blockchain).
+% 지역혁신사업 전자정보 DNA 사업단 소속 교육과정. 저장소 README에 "ABB 융합전공" 명시됨.
+% 처음에 산학협력 과제로 잘못 적었던 것을 정정함 (ictabb.knu.ac.kr 확인).
+% SIL 방법론 연구는 여기서 뺐음. 융합전공이 아니라 연구실 연구라 경력 섹션으로 옮김.
+\cventry{2025--present}{ICT-ABB Convergence Major Project}
+  {Kyungpook National University}
+  {\cvlink{https://github.com/99JIK/ABB}{github.com/99JIK/ABB}}
+  {Real-time emotion classification from facial action units. Up to 30 faces at once,
+   IoU-based multi-face tracking, event triggers on emotion changes and AU thresholds,
+   FastAPI REST and WebSocket streaming. MediaPipe, TensorFlow.}
+
+% 기간은 저장소 커밋 활동(2026.01 demo - 2026.03)에서 추정. 실제 기간 다르면 수정.
+\cventry{2026.01--2026.03}{ST Youngwon Smart Office}{Contract work, in production use}
+  {\cvlink{https://github.com/99JIK/ST_YOUNGWON}{github.com/99JIK/ST\_YOUNGWON}}
+  {\begin{cvitems}
+     \item RAG question answering over internal documents. Regulatory documents chunked
+           hierarchically (article, paragraph, fixed size), retrieved by hybrid keyword
+           and vector search
+     \item LLM providers (OpenAI, Claude, Gemini, local Ollama) behind a protocol
+           abstraction so they can be swapped, per the client's maintainability requirement
+     \item FastAPI, ChromaDB, SQLite, Synology NAS (FileStation API) integration,
+           JWT auth, Docker Compose deployment
+   \end{cvitems}}
+
+% 수업 팀 프로젝트지만 내용이 실해서 넣음. ABB 2025년 표정 분석 주제와 결이 같아 서사도 이어짐.
+% 기간은 과목코드(2025-2학기)와 저장소 최종 커밋(2025.12)에서 추정.
+\cventry{2025.09--2025.12}{FOCUS \cvnote{(Facial Observation \& Concentration Understanding System)}}
+  {Team coursework project}
+  {\cvlink{https://github.com/99JIK/FOCUS_KNU_2025_COMP0738}{github.com/99JIK/FOCUS\_KNU\_2025\_COMP0738}}
+  {Measures a learner's concentration from webcam video in real time. Scores distraction
+   from five signals: eye closure, head orientation, gaze with head-rotation compensation,
+   yawning, and facial action units. MediaPipe Face Landmarker, vanilla JS, Vite.}
+
+% 제작 시기는 저장소 최종 커밋(2025.06)에서 추정. 2025-1학기 기말 무렵.
+\cventry{2025}{Code Plagiarism Detector}{Personal project, Python}
+  {\cvlink{https://github.com/99JIK/COPY_JIKILLER}{github.com/99JIK/COPY\_JIKILLER}}
+  {Compares abstract syntax trees to judge similarity between submissions, ignoring
+   variable names and comments. Supports Python (built-in \texttt{ast}), C/C++ (clang),
+   and Java (javalang). Adjustable similarity threshold, side-by-side diff viewer.
+   Built for the programming exams I assisted.}
+
+% TIL 아카이브는 프로젝트에서 뺐음. 자동화 없는 블로그라 프로젝트로는 약하고,
+% 링크는 이미 머리말에 있음.
+
+% ============================================================ Technical Skills
+\section{Technical Skills}
+% [확인] GitHub 프로필의 스택 목록 그대로. 실무에서 안 쓴 건 빼는 게 낫다
+% 국문판과 행 구성을 맞췄음. ML 항목은 UCWIT 2025에서 실제 사용한 근거 있음.
+\cvline{Languages}{Python, Java, C/C++, TypeScript, JavaScript}
+\cvline{Web / Backend}{FastAPI, Spring, Node.js, React, Vue.js}
+\cvline{Data / ML}{Oracle, PostgreSQL, MySQL, ChromaDB, scikit-learn, LightGBM}
+\cvline{Tools}{Docker, Git, Linux, Kafka}
+
+% 수상 섹션은 뺐음. 2012 정보올림피아드 지역예선 동상뿐인데 시점이 14년 전이고 증거가 없어
+% 지금 CV에 도움이 안 됨. 나중에 채울 게 생기면 되살릴 것.
+
+\end{document}
