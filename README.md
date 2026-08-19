@@ -8,7 +8,8 @@
 | [`cv-ko.tex`](cv-ko.tex) | 국문판 (`korean,small` 옵션) |
 | [`cv-en.tex`](cv-en.tex) | 영문판 (`small` 옵션) |
 | [`build.ps1`](build.ps1) / [`Makefile`](Makefile) | 빌드 |
-| [`.github/workflows/build.yml`](.github/workflows/build.yml) | push 시 PDF 빌드, 아티팩트 업로드 |
+| [`.github/workflows/build.yml`](.github/workflows/build.yml) | 컴파일 회귀 검사. 결과물은 만들지 않는다 |
+| `cv-ko.pdf` / `cv-en.pdf` | **제출본 정본.** 로컬 빌드 결과를 커밋한다 |
 
 현재 분량은 국문 2쪽, 영문 3쪽이다. 같은 내용이라도 영어가 한글보다 3할쯤 길어서
 쪽수는 맞지 않는다. 두 판은 각각 따로 제출하므로 나란히 비교되지 않는다.
@@ -33,7 +34,12 @@ initexmf --set-config-value "[MPM]AutoInstall=1"
 
 `make`가 있으면 `make`, `make ko`, `make en`, `make watch`(저장할 때마다 재빌드).
 
-로컬 설치 없이 쓰려면 push 후 GitHub Actions의 `cv-pdf` 아티팩트를 받는다.
+**제출본은 로컬에서 빌드해 커밋한 PDF다.** CI는 결과물을 만들지 않는다. 깨끗한 머신에서
+소스가 컴파일되는지만 보는 회귀 검사이고, Pretendard가 없어 폰트도 폴백으로 떨어지므로
+CI가 만든 PDF는 로컬 결과와 다르다. 그래서 아티팩트로 올리지 않는다.
+
+CI는 `\TODO{`가 남아 있으면 경고를 낸다. 태그를 붙인 커밋에서는 실패시킨다.
+태그는 제출본이라는 뜻이므로 미기재가 남아 있으면 안 된다.
 
 ## 폰트
 

@@ -1,8 +1,12 @@
-name: build cv
+# 결과물을 만드는 워크플로가 아니다. 제출본은 저장소에 커밋된 PDF가 정본이고,
+# 여기서는 깨끗한 머신에서 소스가 컴파일되는지만 본다. cv.cls를 고치다 망가뜨린 걸
+# 잡는 회귀 검사가 목적이라 폰트는 폴백으로 떨어져도 상관없다.
+name: build check
 
 on:
   push:
     branches: [main]
+    tags: ['*']
   pull_request:
   workflow_dispatch:
 
@@ -12,19 +16,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: compile
+      # 초안 단계에서는 TODO가 남아 있는 게 정상이라 경고만 낸다.
+      # 태그를 붙이는 건 제출본이라는 뜻이므로 그때는 실패시킨다.
+      - name: TODO 표식 검사
+        run: |
+          if grep -nF '\TODO{' cv-ko.tex cv-en.tex; then
+            if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+              echo "::error::제출본인데 채우지 않은 TODO가 남아 있음"
+              exit 1
+            fi
+            echo "::warning::채우지 않은 TODO가 남아 있음"
+          else
+            echo "TODO 없음"
+          fi
+
+      # Pretendard는 CI에 없어서 한글은 Noto Sans CJK KR로 떨어진다.
+      # 로컬 빌드와 폰트가 달라지지만 컴파일 성공 여부만 보는 자리라 문제되지 않는다.
+      - name: 컴파일
         uses: xu-cheng/latex-action@v3
         with:
           root_file: |
             cv-en.tex
             cv-ko.tex
           latexmk_use_xelatex: true
-          # 컨테이너(Alpine) 안에 한글 폰트 설치. 러너 호스트에 깔면 컨테이너엔 안 보임.
           extra_system_packages: "font-noto-cjk"
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: cv-pdf
-          path: |
-            cv-en.pdf
-            cv-ko.pdf
