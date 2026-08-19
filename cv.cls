@@ -96,7 +96,11 @@
 \linespread{1.12}
 
 \raggedbottom
-% 양쪽정렬 해제. 좁은 칼럼에서 단어 간격이 들쭉날쭉해짐. CV는 왼끝맞춤이 표준.
+% 양쪽정렬 해제. 좁은 칼럼에서 간격이 들쭉날쭉해짐. CV는 왼끝맞춤이 표준.
+% 주의: 이것만으로는 minipage 안에 안 걸린다. minipage가 \@parboxrestore를 부르면서
+% \rightskip을 양쪽정렬로 되돌리기 때문. 본문이 거의 다 minipage 안이라
+% \cventry, \cvline 안쪽에도 \RaggedRight를 따로 넣어야 한다.
+% 안 넣으면 kotex가 한글 글자 사이를 늘려 "연  동" 같은 틈이 생김.
 \AtBeginDocument{\RaggedRight}
 
 % ---------------------------------------------------------------- 섹션
@@ -167,6 +171,7 @@
 \newcommand{\cventry}[5]{%
   \cv@datecol{#1}%
   \begin{minipage}[t]{\dimexpr\linewidth-\cvdatewidth-\cvgap\relax}
+    \RaggedRight
     \strut\textbf{#2}\notblank{#4}{\hfill{\small\color{cvmuted}#4}}{}\par
     \notblank{#3}{\vspace{0.1em}{\itshape #3}\par}{}
     \notblank{#5}{\vspace{0.25em}{\small #5}\par}{}
@@ -178,6 +183,7 @@
 \newcommand{\cvline}[2]{%
   \cv@datecol{#1}%
   \begin{minipage}[t]{\dimexpr\linewidth-\cvdatewidth-\cvgap\relax}
+    \RaggedRight
     \strut #2
   \end{minipage}\par\vspace{0.32em}
 }
