@@ -1,0 +1,4 @@
+# 작업 트리도 LF로 통일. CRLF가 섞이면 sed/스크립트 편집에서 줄이 깨지고,
+# CI(리눅스)와 로컬 결과가 갈린다.
+* text=auto eol=lf
+*.pdf binary
