@@ -1,17 +1,31 @@
 # 결과물을 만드는 워크플로가 아니다. 제출본은 저장소에 커밋된 PDF가 정본이고,
 # 여기서는 깨끗한 머신에서 소스가 컴파일되는지만 본다. cv.cls를 고치다 망가뜨린 걸
 # 잡는 회귀 검사가 목적이라 폰트는 폴백으로 떨어져도 상관없다.
-name: build check
+#
+# paths 필터가 핵심이다. 이게 없으면 블로그 봇과 스네이크 워크플로가 main에 커밋할
+# 때마다 LaTeX 빌드가 돌아간다. cv/ 아래가 바뀔 때만 의미가 있다.
+name: cv build check
 
+# 태그는 push가 아니라 create로 받는다. push에 paths와 tags를 같이 걸면 태그 푸시에서
+# 경로 필터가 매칭되지 않아 워크플로가 통째로 스킵되고, 아래 TODO 게이트가 죽는다.
+# create에는 경로 필터가 적용되지 않는다.
 on:
   push:
     branches: [main]
-    tags: ['*']
+    paths: ['cv/**', '.github/workflows/cv-build.yml']
   pull_request:
+    paths: ['cv/**', '.github/workflows/cv-build.yml']
+  create:
   workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: cv
 
 jobs:
   build:
+    # create는 브랜치를 만들 때도 발생한다. 태그일 때만 돈다.
+    if: github.event_name != 'create' || github.ref_type == 'tag'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,6 +49,7 @@ jobs:
       - name: 컴파일
         uses: xu-cheng/latex-action@v3
         with:
+          working_directory: cv
           root_file: |
             cv-en.tex
             cv-ko.tex

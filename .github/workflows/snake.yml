@@ -1,0 +1,38 @@
+# 기여도 그래프를 먹는 뱀 애니메이션. output 브랜치에 SVG를 올리고 README가 그걸 참조한다.
+#
+# 예전에는 orphan 브랜치를 매번 --force push한 뒤 아래 스텝이 또 push했다. 중복이고
+# output 히스토리를 매일 날렸다. ghaction-github-pages가 브랜치 생성까지 알아서 하므로
+# 그 스텝은 제거했다.
+name: snake
+
+on:
+  schedule:
+    - cron: "0 18 * * *"   # 03:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 라이트/다크 두 벌을 만든다. README가 <picture>로 골라 쓴다.
+      # 한 벌만 만들면 다크 모드에서 뱀이 배경에 묻혀 안 보인다.
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+
+      # build_dir을 dist로 두면 output 브랜치 루트에 파일이 놓인다.
+      # 예전처럼 '.'로 두면 저장소 전체가 output 브랜치로 복사됐다.
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

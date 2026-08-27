@@ -1,0 +1,46 @@
+# 활동 통계 SVG를 직접 만들어 assets/에 커밋한다.
+#
+# 예전에는 README가 github-readme-stats.vercel.app과 streak-stats.demolab.com을
+# <img src>로 불렀다. 둘 다 공용 인스턴스라 레이트리밋에 걸려 상시 죽었고(각각 503,
+# 연결실패) 프로필에 깨진 이미지가 떴다. 직접 생성해 커밋하면 외부 가용성과 무관해진다.
+name: stats
+
+on:
+  schedule:
+    - cron: "0 19 * * *"   # 04:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # contributionsCollection은 GITHUB_TOKEN으로 비는 경우가 있다. read:user 스코프를
+      # 준 PAT를 STATS_TOKEN 시크릿으로 넣으면 그걸 쓰고, 없으면 기본 토큰으로 떨어진다.
+      - name: SVG 생성
+        env:
+          GH_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: python .github/scripts/gen_stats.py
+
+      # 내용이 같으면 커밋하지 않는다. 매일 도는 워크플로라 무조건 커밋하면
+      # 히스토리가 의미 없는 커밋으로 찬다.
+      - name: 변경분 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats-light.svg assets/stats-dark.svg
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "Update activity stats"
+            git push
+          fi

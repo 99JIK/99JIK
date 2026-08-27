@@ -1,7 +1,13 @@
-name: Latest blog post workflow
+# til.99jik.com 최신 글을 README에 채운다. RSS 내용이 바뀔 때만 커밋하므로
+# 실제 커밋은 글 발행 빈도(월 1~2회)를 따라간다.
+#
+# cron은 6시간마다에서 하루 1회로 낮췄다. 발행이 월 1~2회라 6시간 주기는
+# 실효가 없고 워크플로 실행만 4배였다.
+name: blog posts
+
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 21 * * *'   # 06:00 KST
   workflow_dispatch:
 
 jobs:

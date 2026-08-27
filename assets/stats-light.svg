@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="228" viewBox="0 0 840 228" role="img" aria-label="GitHub activity summary">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}</style>
+<rect x="0.5" y="0.5" width="839" height="227" rx="12" fill="none" stroke="#d1d9e0"/>
+<text x="24" y="38" font-size="14" font-weight="600" fill="#1f2328">Activity</text>
+<text x="816" y="38" text-anchor="end" font-size="11" fill="#656d76">2026-08-27</text>
+<text x="24.0" y="96" font-size="26" font-weight="600" fill="#0969da">9</text>
+<text x="24.0" y="116" font-size="11" fill="#656d76">public repos</text>
+<text x="204.0" y="96" font-size="26" font-weight="600" fill="#1f2328">68</text>
+<text x="204.0" y="116" font-size="11" fill="#656d76">commits (1y)</text>
+<text x="384.0" y="96" font-size="26" font-weight="600" fill="#1f2328">8</text>
+<text x="384.0" y="116" font-size="11" fill="#656d76">repos created (1y)</text>
+<line x1="24" y1="142" x2="816" y2="142" stroke="#d1d9e0"/>
+<text x="24" y="172" font-size="11" fill="#656d76">Languages</text>
+<clipPath id="bar"><rect x="24" y="182" width="792" height="8" rx="4"/></clipPath>
+<rect x="24" y="182" width="792" height="8" rx="4" fill="#eaeef2"/>
+<g clip-path="url(#bar)">
+<rect x="24.00" y="182" width="310.86" height="8" fill="#3572A5"/>
+<rect x="334.86" y="182" width="265.11" height="8" fill="#f1e05a"/>
+<rect x="599.97" y="182" width="77.92" height="8" fill="#dea584"/>
+<rect x="677.90" y="182" width="37.51" height="8" fill="#663399"/>
+<rect x="715.41" y="182" width="37.06" height="8" fill="#e34c26"/>
+<rect x="752.47" y="182" width="26.91" height="8" fill="#3178c6"/>
+</g>
+<circle cx="28.0" cy="211" r="4" fill="#3572A5"/>
+<text x="38.0" y="215" font-size="11" fill="#656d76">Python 39.3%</text>
+<circle cx="133.2" cy="211" r="4" fill="#f1e05a"/>
+<text x="143.2" y="215" font-size="11" fill="#656d76">JavaScript 33.5%</text>
+<circle cx="262.8" cy="211" r="4" fill="#dea584"/>
+<text x="272.8" y="215" font-size="11" fill="#656d76">Rust 9.8%</text>
+<circle cx="349.7" cy="211" r="4" fill="#663399"/>
+<text x="359.7" y="215" font-size="11" fill="#656d76">CSS 4.7%</text>
+<circle cx="430.5" cy="211" r="4" fill="#e34c26"/>
+<text x="440.5" y="215" font-size="11" fill="#656d76">HTML 4.7%</text>
+<circle cx="517.4" cy="211" r="4" fill="#3178c6"/>
+<text x="527.4" y="215" font-size="11" fill="#656d76">TypeScript 3.4%</text>
+</svg>
