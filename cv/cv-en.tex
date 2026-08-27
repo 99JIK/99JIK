@@ -180,13 +180,19 @@ predictive modeling on industrial process data
    from five signals: eye closure, head orientation, gaze with head-rotation compensation,
    yawning, and facial action units. MediaPipe Face Landmarker, vanilla JS, Vite.}
 
-% 제작 시기는 저장소 최종 커밋(2025.06)에서 추정. 2025-1학기 기말 무렵.
-\cventry{2025}{Code Plagiarism Detector}{Personal project, Python}
-  {\cvlink{https://github.com/99JIK/COPY_JIKILLER}{github.com/99JIK/COPY\_JIKILLER}}
-  {Compares abstract syntax trees to judge similarity between submissions, ignoring
-   variable names and comments. Supports Python (built-in \texttt{ast}), C/C++ (clang),
-   and Java (javalang). Adjustable similarity threshold, side-by-side diff viewer.
-   Built for the programming exams I assisted.}
+% 원래 COPY_JIKILLER(파이썬 스크립트)였는데 Rust 데스크톱 앱으로 다시 쓰면서 저장소
+% 이름도 Provenance로 바뀌었음. 예전 이름은 리다이렉트로 아직 열리지만 같은 이름의
+% 저장소가 새로 생기면 깨지므로 현재 이름으로 적음.
+% 기간은 저장소 생성(2025.06)과 최종 커밋(2026.08) 기준. 계속 손대고 있음.
+\cventry{2025.06--present}{Provenance \cvnote{(code plagiarism detection)}}
+  {Personal project, Rust}
+  {\cvlink{https://github.com/99JIK/Provenance}{github.com/99JIK/Provenance}}
+  {Compares program structure rather than text, so renaming variables or rewriting
+   comments does not hide a copy. Parses Python, Java, C, C++, JavaScript, TypeScript,
+   and Go, with the parsers compiled into the binary so a grader installs nothing else.
+   Starter code can be set as a template and discounted. Matches are reported as groups
+   rather than pairwise, scored by similarity, containment, and density.
+   Cross-platform desktop app. Built for the programming exams I assisted.}
 
 % TIL 아카이브는 프로젝트에서 뺐음. 자동화 없는 블로그라 프로젝트로는 약하고,
 % 링크는 이미 머리말에 있음.
