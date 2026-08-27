@@ -1,14 +1,15 @@
 # 결과물을 만드는 워크플로가 아니다. 제출본은 저장소에 커밋된 PDF가 정본이고,
-# 여기서는 깨끗한 머신에서 소스가 컴파일되는지만 본다. cv.cls를 고치다 망가뜨린 걸
-# 잡는 회귀 검사가 목적이라 폰트는 폴백으로 떨어져도 상관없다.
+# 여기서는 두 가지만 본다. 소스가 깨끗한 머신에서 컴파일되는지, 그리고 커밋된 PDF가
+# 소스보다 오래되지 않았는지.
 #
 # paths 필터가 핵심이다. 이게 없으면 블로그 봇과 스네이크 워크플로가 main에 커밋할
 # 때마다 LaTeX 빌드가 돌아간다. cv/ 아래가 바뀔 때만 의미가 있다.
-name: cv build check
-
+#
 # 태그는 push가 아니라 create로 받는다. push에 paths와 tags를 같이 걸면 태그 푸시에서
 # 경로 필터가 매칭되지 않아 워크플로가 통째로 스킵되고, 아래 TODO 게이트가 죽는다.
 # create에는 경로 필터가 적용되지 않는다.
+name: cv build check
+
 on:
   push:
     branches: [main]
@@ -29,9 +30,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 아래 최신성 검사가 커밋 히스토리를 봐야 한다
 
       # 초안 단계에서는 TODO가 남아 있는 게 정상이라 경고만 낸다.
       # 태그를 붙이는 건 제출본이라는 뜻이므로 그때는 실패시킨다.
+      #
+      # 로컬 빌드는 TODO를 막지 않는다. \TODO{}가 있어도 latexmk는 종료 코드 0으로
+      # 빨간 표식이 찍힌 PDF를 정상 생산한다. 그래서 이 검사가 CI에만 있다.
       - name: TODO 표식 검사
         run: |
           if grep -nF '\TODO{' cv-ko.tex cv-en.tex; then
@@ -43,6 +49,34 @@ jobs:
           else
             echo "TODO 없음"
           fi
+
+      # 소스만 고치고 build.ps1을 안 돌린 채 커밋하면 소스와 PDF가 조용히 어긋난다.
+      # 컴파일은 되니 아래 컴파일 검사도 통과하고, 로컬에서도 아무 신호가 없다.
+      # 실제로 가장 나기 쉬운 실수인데 지금껏 아무도 막지 않았다.
+      #
+      # 렌더링 결과를 대조하는 방법은 못 쓴다. CI에는 Pretendard가 없어 Noto로
+      # 폴백하는데, 폰트 메트릭이 다르면 줄바꿈과 하이픈 위치가 달라져서 같은
+      # 소스라도 추출 텍스트가 어긋난다. 그래서 커밋 시각으로 판정한다.
+      # 소스와 PDF를 같은 커밋에 넣으면 시각이 같아 통과한다.
+      - name: PDF 최신성 검사
+        run: |
+          stale=0
+          for f in cv-ko cv-en; do
+            src=$(git log -1 --format=%ct -- "$f.tex" cv.cls)
+            pdf=$(git log -1 --format=%ct -- "$f.pdf")
+            if [ -z "$pdf" ]; then
+              echo "::error::$f.pdf가 커밋되어 있지 않음"
+              stale=1
+            elif [ "$src" -gt "$pdf" ]; then
+              echo "::error::$f.pdf가 소스보다 오래됨. build.ps1을 돌려 소스와 같은 커밋에 넣을 것"
+              echo "  소스 최종 변경: $(git log -1 --format='%h %ci %s' -- "$f.tex" cv.cls)"
+              echo "  PDF  최종 변경: $(git log -1 --format='%h %ci %s' -- "$f.pdf")"
+              stale=1
+            else
+              echo "$f.pdf 최신"
+            fi
+          done
+          exit $stale
 
       # Pretendard는 CI에 없어서 한글은 Noto Sans CJK KR로 떨어진다.
       # 로컬 빌드와 폰트가 달라지지만 컴파일 성공 여부만 보는 자리라 문제되지 않는다.
