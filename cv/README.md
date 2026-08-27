@@ -29,15 +29,61 @@ CI는 결과물을 만들지 않고 컴파일이 되는지만 본다.
 
 ## 최초 설치
 
+셋을 깐다. TeX 배포판, Perl, 폰트. 전부 사용자 디렉터리에 들어가고 관리자 권한이 필요 없다.
+
+### 1. MiKTeX
+
+`winget install --id MiKTeX.MiKTeX`은 쓰지 말 것. winget이 설치 관리자를 GUI로 띄우고
+그대로 멈춘다. `--disable-interactivity`를 줘도 마찬가지다. 설치 관리자를 직접 받아
+포터블로 푸는 쪽이 확실하다.
+
 ```powershell
-winget install --id MiKTeX.MiKTeX -e
-# 새 셸을 열어 PATH 반영 후
-initexmf --set-config-value "[MPM]AutoInstall=1"
+$exe = "$env:TEMP\basic-miktex.exe"
+Invoke-WebRequest -OutFile $exe `
+  "https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-25.12-x64.exe"
+& $exe --unattended --portable="$env:LOCALAPPDATA\Programs\MiKTeX-portable"
 ```
 
-폰트는 [Pretendard](https://github.com/orioncactus/pretendard/releases)를 깐다. 한글과 라틴을 한
+`--portable`이 핵심이다. `--shared=no`나 `--user-install=`은 이 설치 관리자가 받지 않는
+옵션이라 로그도 안 남기고 exit 1로 죽는다.
+
+푼 뒤 `...\MiKTeX-portable\texmfs\install\miktex\bin\x64`를 PATH에 넣고, 새 셸에서:
+
+```powershell
+initexmf --set-config-value "[MPM]AutoInstall=1"
+miktex packages update-package-database
+```
+
+### 2. Perl
+
+MiKTeX는 Perl을 번들하지 않는데 `latexmk`가 Perl 스크립트다. 없으면
+`could not find the script engine 'perl'`로 멈춘다. xelatex 직접 호출은 되지만
+상호참조(`cv@lastpage`)가 2패스를 요구해서 쪽수 표기가 틀어진다.
+
+[Strawberry Perl portable](https://github.com/StrawberryPerl/Perl-Dist-Strawberry/releases)을
+받아 풀고 `perl\bin`을 PATH에 넣는다.
+
+### 3. 폰트
+
+[Pretendard](https://github.com/orioncactus/pretendard/releases)를 깐다. 한글과 라틴을 한
 폰트가 덮어 크기와 획 굵기 불일치가 사라진다. **static 버전을 설치할 것.** Variable(VF)은
 XeTeX가 축을 못 읽어 볼드가 통째로 사라진다. 없으면 맑은 고딕 등으로 폴백한다.
+
+배포 zip의 `public/static/*.otf` 9개를 `%LOCALAPPDATA%\Microsoft\Windows\Fonts`에 복사하고
+`HKCU:\Software\Microsoft\Windows NT\CurrentVersion\Fonts`에 등록하면 관리자 권한 없이 깔린다.
+
+### 확인
+
+```powershell
+.\build.ps1
+```
+
+국문 2쪽, 영문 3쪽이 나오면 된 것이다. `\TU/Pretendard`가 로그에 보이면 폰트도 제대로 잡혔다.
+
+포터블 모드에서는 `major issue: So far, you have not checked for MiKTeX updates.`가 매번
+stderr로 나온다. `miktex packages check-update`를 돌려도 안 사라지는데, 종료 코드는 0이라
+빌드에는 지장이 없다. 다만 PowerShell에서 네이티브 stderr를 `2>&1`로 받으면 이 줄 때문에
+실패로 잡히니 그렇게 쓰지 말 것.
 
 ## 손대기 전에
 
